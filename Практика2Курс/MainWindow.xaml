@@ -1,0 +1,37 @@
+﻿<Window x:Class="Практика2Курс.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Практика2Курс"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="Grid1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0.6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="1.7*"/>
+        </Grid.RowDefinitions>
+        <Canvas x:Name="MainPaintField" Grid.RowSpan="2" Margin="0,20,0,0"/>
+        <Canvas x:Name="ExamplePhone" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="99" Height="210"/>
+        <WrapPanel Grid.Column="1" Margin="0,20,0,0">
+            <TextBlock Text="Текущий выбранный объект: "/>
+            <TextBlock Text="{Binding Name}" Margin="0 0 500 0" Width="230"/>
+            <TextBlock Text="Производитель данного телефона: "/>
+            <TextBlock Text="{Binding ManufactorName}" Margin="0 0 500 0" Width="230"/>
+        </WrapPanel>
+        <Menu Grid.Row="0" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top">
+            <MenuItem Header="Меню">
+                <MenuItem Header="Сохранить как картинку" Click="SaveAsImageClick" />
+                <MenuItem Header="Сохранить" />
+                <MenuItem Header="Загрузить" />
+            </MenuItem>
+            <MenuItem Header="Добавить кнопочный телефон" Click="AddNormalPushButtonPhoneClick"/>
+            <MenuItem Header="Добавить смартфон" Click="AddSmartPhoneClick"/>
+            <MenuItem Header="Добавить выдвижной телефон" Click="AddRetractablePushButtonPhoneClick"/>
+        </Menu>
+    </Grid>
+</Window>
